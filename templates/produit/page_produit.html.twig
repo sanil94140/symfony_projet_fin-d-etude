@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/styleHome.css" />
+  <style>
+  @media screen and (max-width: 700px) {
+    #produit {
+      flex-direction: column;
+    }      
+  }
+  </style>
+{% endblock %}
+
+
+{% block body %}
+
+<h1 class="text-center my-5" 
+style="font-size:100px;background:black;color:white;">
+{{product.titre}}</h1>
+
+<div class="container d-flex my-2" id="produit">
+<div class="row">
+
+    <div id="produit-block" class="col-lg col-sm-8">
+    <img src={{product.image}} 
+    alt={{product.titre}} 
+    style="max-width:100%"/>
+    </div>
+
+
+    <div id="produit-block" class="col-lg col-sm-8" 
+    style="background:radial-gradient(white, red);text:align-center;border-radius:5px;">
+    <div class="prix w-50 mx-auto my-2">
+    <a href="{{path('cart_add' , {'id': product.id})}}" class="btn btn-info text-center w-100">PRIX: {{product.prix | amount }}</a> 
+    </div>
+    <b>
+    <h2>A propos du produit:</h2><br/>
+    <p>{{product.description}}</p><br/>
+    {% if product.poids is not null %}
+    <h3>Poids du prouit:</h3><br/>
+    <p>{{product.poids}}</p>
+    {% endif %}
+
+    </b>
+    <div class="w-50 mx-auto my-2">
+    <a href="{{path('cart_add' , {'id': product.id})}}" class="btn btn-info text-center w-100"><i class="fas fa-cart-plus"></i> AJOUTER AU PANIER</a>
+    </div>
+    
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block script %}
+<script src="/js/scriptHome.js"></script>
+{% endblock %}

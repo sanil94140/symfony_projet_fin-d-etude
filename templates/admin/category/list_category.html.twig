@@ -1,0 +1,73 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block body %}
+
+<div class="adminPage">
+
+    <div class="row">
+        <div class="menuTopAdmin">
+            <div class="col-12">
+                <h1>Administration</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row divHomePageAdmin">
+        {% include "admin/shared/_sidebar_admin.html.twig" %}
+        <div class="col-9 mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h3>Les catégories</h3>
+                        <a class="btn btn-primary" href="{{ path('create_category') }}">
+                            <i class="fas fa-plus"></i> Créer
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        {% if categories | length > 0 %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>Numéro de catégorie</th>
+                                    <th>Nom de la catégorie</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    {% for category in categories %}
+                                        <tr>
+                                            <td >
+                                            <div class="d-flex align-items-center imageTable"><p>{{category.id}}</p></div>
+                                            </td>
+                                            <td >
+                                                <div class="d-flex align-items-center imageTable">
+                                                    {% if category.nomDeLaCategorie is same as null %}
+                                                        <p>Erreur lors de la création de la catégorie</p>
+                                                    {% else %}
+                                                        <p>{{ category.nomDeLaCategorie }}</p>
+                                                    {% endif %}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-sm btn-info btnTable" href="{{ path('edit_category',{ 'id' : category.id }) }}" ><i class="fas fa-pen"></i> Modifier</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-sm btn-danger btnTable" href="{{ path('delete_category',{ 'id' : category.id }) }}"><i class="fas fa-trash"></i> Supprimer</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            
+                            </table>
+                        </div>
+                        {% else %}
+                            <p class="card-text">Aucune catégorie n'est enregistrée.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

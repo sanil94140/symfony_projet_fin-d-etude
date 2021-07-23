@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/styleHome.css" />
+{% endblock %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+<h1>Votre panier</h1>
+{% if items | length>0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantié</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{item.product.titre}}</td>
+                    <td>{{item.product.prix | amount }}</td>
+                    <td>
+                    <a href="{{path('cart_minus' , {'id': item.product.id})}}" class="btn btn-danger btn-sm ml-2 mr-2">
+                        <i class="fas fa-minus"></i>
+                    </a>
+                    {{item.quantity}}
+                    <a href="{{path('cart_add' , {'id': item.product.id})}}" class="btn btn-danger btn-sm ml-2 mr-2">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                    </td>
+                    <td>{{item.product.prix * item.quantity}}</td>
+                    <td>
+                        <a href="{{path('cart_remove' , {'id': item.product.id})}}" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <td colspan="3" class="text-right">Total</td>
+            <td>{{total | amount }}<br/><a href={{path("valider_purchase")}} class="btn btn-success">COMMANDER</a></td>
+        </tfoot>
+    </table>
+{% else %}
+    <p class="btn btn-info">Votre panier est vide!</p>
+    
+{% endif %}
+{% endblock %}
+
+{% block script %}
+<script src="/js/scriptHome.js"></script>
+{% endblock %}

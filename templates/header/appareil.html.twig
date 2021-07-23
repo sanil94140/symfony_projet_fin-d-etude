@@ -1,0 +1,93 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/_navbar/chaussures.css" />
+{% endblock %}
+
+{% block body %}
+
+
+    <!-- title -->
+    <h1>appareil de sport | homme ou femme</h1>
+    <!-- <div>Optimisez votre environnement de sport</div> -->
+    <br /><br /><br />
+    <p class="innerWidth"></p>
+    <h2>Collection homme</h2>
+    <!-- main homme -->
+    <main class="collection-homme">
+      <!-- <div class="flecheGauche">
+        <a href="!#"><i class="fas fa-caret-left"></i></a>
+      </div> -->
+      <div class="w-75 mx-auto">
+      {% for appareil in appareils %}
+      {% if appareil.sexe is same as "homme" or appareil.sexe is same as null %}
+          
+        <section class="image-homme">
+          <a href={{path('produit' , {'id': appareil.id})}}
+            ><img
+              src={{appareil.image}}
+              alt="article 1"
+          /></a>
+          <div style="display:block;">
+            <a href={{path('produit' , {'id': appareil.id})}}><h2>{{appareil.titre}}</h2></a>
+            <p>{{appareil.prix | amount }}€</p>
+          </div>
+          <a href={{path('produit' , {'id': appareil.id})}} class="btn btn-success">Détails</a>
+            
+        </section>
+        {% endif %}
+      {% endfor %}
+
+      </div>
+
+      <!-- <div class="flecheDroite">
+        <a href="!#"><i class="fas fa-caret-right"></i></a>
+      </div> -->
+    </main>
+
+    <br />
+    <br />
+    <br />
+
+    <!-- main femme -->
+
+    <h2>Collection femme</h2>
+
+    <main class="collection-femme">
+      {# <div class="flecheGauche">
+        <a href="!#"><i class="fas fa-caret-left"></i></a>
+      </div> #}
+
+
+      <div class="w-75 mx-auto">
+      {% for appareil in appareils %}
+      {% if appareil.sexe is same as "femme" %}
+        <section class="image-femme">
+            <a href={{path('produit' , {'id': appareil.id})}}
+            ><img
+                src={{appareil.image}}
+                alt="article 1"
+            /></a>
+            <div style="display:block;">
+            <a href={{path('produit' , {'id': appareil.id})}}><h2>{{appareil.titre}}</h2></a>
+            <p>{{appareil.prix}}€</p>
+            <a href={{path('produit' , {'id': appareil.id})}} class="btn btn-success">Détails</a>
+           
+            </div>
+        </section>
+        {% endif %}
+      {% endfor %}
+      </div>
+
+
+      {# <div class="flecheDroite">
+        <a href="!#"><i class="fas fa-caret-right"></i></a>
+      </div> #}
+    </main>
+
+
+{% endblock %}
+
+{% block script %}
+<script src="/js/scriptHome.js"></script>
+{% endblock %}

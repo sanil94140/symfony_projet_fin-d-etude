@@ -1,0 +1,55 @@
+    <footer>
+      <div class="info-site">
+        <div class="footer-logo">
+          <img src="" alt="logo" />
+        </div>
+        <br />
+        <div class="footer-legales">
+          <ul>
+            <li><a href="{{ path('public_contact') }}">Contact</a></li>
+            <li><a href="/#">A propos</a></li>
+            <li><a href="{{path("public_blog")}}">Blog</a></li>
+            <li><a href="{{ path('public_cgv') }}">CGV</a></li>
+            <li><a href="{{ path('public_faq') }}">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="souscription-email">
+        <form action="" method="post">
+          <label for="email"
+            >Pour être parmi les premiers à être tenu informé des offres,
+            souscrivez à notre VIP Newsletter.</label
+          >
+          <br />
+          <input
+            type="email"
+            id="email"
+            placeholder="Votre adresse email"
+            required
+          />
+          <button>Valider</button>
+          {# <p class="paragrapheEmail"></p> #}
+        </form>
+      </div>
+      <div class="réseaux">
+        <h4>SUIVEZ-NOUS:</h4>
+        <ul>
+          <li>
+            <a href="/#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="/#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="/#"><i class="fab fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="/#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="/#"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>

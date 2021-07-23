@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/styleHome.css" />
+{% endblock %}
+
+{% block body %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="text-center">Création d'un compte</h1>
+    </div>
+    
+    <div class="card-body my-5">
+        {{ form_start(registrationForm) }}
+            <div class="row">
+            
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.prenom) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.nom) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.pseudo) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.email) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de Passe'
+                }) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.numeroDeLaRue) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.sexe) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.nomDeLaRue) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.ville) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.codePostal) }}</div>
+                <div class="col-12 col-md-6">{{ form_row(registrationForm.pays) }}</div>
+            </div>
+            <div class="container">
+                <button type="submit" class="btn btn-success w-75">
+                <p class="text-center" style="font-size:25px;">Oui, je créée un compte!!</p> 
+                </button>            
+            </div>
+
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="/js/scriptHome.js"></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Commande validée!!</title>
+    </head>
+    <body>
+        Bonjour {{user.prenom}},
+
+        <h1 style="color:red;background:black;text-align:center;margin:15px auto;">
+        Merci pour la confiance accordée. <br/>Voici le détail de vos articles:</h1>
+
+            <table class="table" style="border:solid 5px red;color:black;margin:15px auto;width:75%;padding:15px;">
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Prix (en €)</th>
+                        <th>Quantié</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in lignesDeCommandeArray %}
+                        <tr>
+                            <td>{{item.produit.titre}}</td>
+                            <td>{{item.produit.prix} | amount }</td>
+                            <td>
+                            {{item.quantite}}
+                            </td>
+                            <td>{{{{item.produit.prix | amount }} * item.quantite}}</td>
+                        </tr>
+                        
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style"text-align:right;">Total (en €)</td>
+                        <td>{{totalPrix | amount }}</td>                
+                    </tr>
+                    <tr>
+                        <td colspan="3" style"text-align:right;">Quantité "total" d\'article</td>
+                        <td>{{totalArticle}} 
+                        {% if totalArticle is same as 1 %}
+                            "article"
+                        {% else %}
+                            "articles"
+                        {% endif %}</td>                
+                    </tr>
+
+                </tfoot>
+            </table>
+
+
+    </body>
+</html>

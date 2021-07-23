@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de connexion{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/styleHome.css" />
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container py-5 mx-auto w-75">
+    <div class="row w-100">
+        <div class="card w-100">
+            <div class="card-header">
+                <h3 class="text-center">Formulaire de connexion</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    <label for="inputEmail">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                    <label for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+                    <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    <button class="btn btn-lg btn-primary my-3" type="submit">
+                        Se connecter
+                    </button>
+                </form>
+                <a href={{path("app_register")}} class="btn btn-success">Créer un compte</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+

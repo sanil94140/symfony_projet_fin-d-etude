@@ -1,0 +1,51 @@
+    <!-- header -->
+
+    <header>
+      <div class="logo">
+        <a href="{{ path('public_home')}} "><img src="" alt="logo" /></a>
+      </div>
+
+      <div class="navbar">
+        <ul>
+          <li><a href="{{path("public_blog")}}">CONSEIL SPORT</a></li>
+          <li><a href="{{path("category_vetement")}}">VÊTEMENTS</a></li>
+          <li><a href="{{path("category_chaussure")}}">CHAUSSURES</a></li>
+          <li><a href="{{path("category_appareil")}}">APPAREILS</a></li>
+          <li><a href="{{path("category_equipement")}}">équipement</a></li>
+
+          {% if app.user %}
+          <li><a href="{{path('admin_home')}}">Espace membre</a></li>
+          <li><a href="{{path('app_logout')}}">Se déconnecter</a></li>
+          {% else %}
+          <li><a href="{{path('app_login')}}">Se connecter</a></li>
+          <li><a href="{{path('app_register')}}">Créer un compte</a></li>
+          {% endif %}
+          <li>
+            <a href="{{path('cart')}}"><i class="fas fa-cart-plus"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="barreNav">
+        <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> </a>
+      </div>
+    </header>
+
+    <!-- lowheader -->
+    <div class="navbar2">
+      <ul>
+          <li><a href="{{path("public_blog")}}">CONSEIL SPORT</a></li>
+          <li><a href="{{path("category_vetement")}}">VÊTEMENTS</a></li>
+          <li><a href="{{path("category_chaussure")}}">CHAUSSURES</a></li>
+          <li><a href="{{path("category_appareil")}}">APPAREILS</a></li>
+          <li><a href="{{path("category_equipement")}}">équipement</a></li>
+          {% if app.user %}
+          <li><a href="{{path('app_logout')}}">Se déconnecter</a></li>
+          {% else %}
+          <li><a href="{{path('app_login')}}">Se connecter</a></li>
+          <li><a href="{{path('app_register')}}">Créer un compte</a></li>
+          {% endif %}
+          <li>
+            <a href="{{path('cart')}}"><i class="fas fa-cart-plus"></i></a>
+          </li>
+      </ul>
+    </div>

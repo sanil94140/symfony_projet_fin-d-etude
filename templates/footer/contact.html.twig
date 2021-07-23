@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/footer.css">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <!-- title -->
+    <h1>
+      Vous avez des questions! <br /><br />Vous avez besoin d'informations
+      complémentaires conçenant notre boutique! <br /><br />On vous invite à
+      nous contacter viale formulaire de contact ci-dessous
+    </h1>
+    <br />
+    <br />
+    <br />
+
+    <!-- formulaire -->
+    <form>
+      <div class="input">
+        <label for="text">Votre nom:</label>
+        <div class="prenom">
+          <input type="text" id="text" />
+          <p></p>
+        </div>
+      </div>
+
+      <div class="input">
+        <label for="mail">Votre adresse mail:</label>
+        <div class="mail">
+          <input type="email" id="mail" />
+          <p></p>
+        </div>
+      </div>
+
+      <div class="input">
+        <label for="textarea">Votre demande:</label>
+        <div class="textarea">
+          <textarea
+            name="textarea"
+            id="textarea"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <p></p>
+        </div>
+      </div>
+
+      <br />
+      <div class="button"><button>Envoyer</button></div>
+      <p></p>
+    </form>
+</div>
+
+
+{% endblock %}
+
+
+{% block script %}
+<script src="/js/footer/contact.js"></script>
+{% endblock %}

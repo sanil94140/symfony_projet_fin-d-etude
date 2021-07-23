@@ -1,0 +1,87 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/styleHome.css" />
+{% endblock %}
+
+{% block body %}
+    <!-- CONTAINER-1 -->
+
+    <div class="container-1">
+      <div class="img-container-1">
+        <img src="/images/home-bodybuilding.jpg" alt="photo-presentation" />
+      </div>
+      <div class="text-container-1">
+        <div class="titre-container-1">
+          <p>Je développe mon corps de <b>chez moi</b>!!!</p>
+        </div>
+        <div class="Question-container-1">
+          <p>
+            &#9747; Vous avez marre de ne pas pouvoir faire du sport, à cause du
+            <i>confinement</i>?
+          </p>
+          <p>&#9747; Vous sentez un manque d'équilibre dans votre vie?</p>
+          <p>&#9747; Vous voulez éviter d'avoir un corps rouillé?</p>
+        </div>
+        <div class="message-choc-container-1">
+          <p>
+            la bonne nouvelle, c'est qu'ON VA TROUVER DES SOLUTIONS ENSEMBLES!!!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTAINER-2 -->
+    <div class="container-2">
+      <!-- BLOCK-1 -->
+      <div class="block-1">
+        <div class="image-block-1">
+          <img
+            src="images/pexels-andrea-piacquadio-867453.jpg"
+            alt="vêtements"
+          />
+        </div>
+        <div class="text-block-1">
+          <p>
+            Retrouvez les vêtements adaptées à vos séances de fitness ou
+            musuculation <b>à la maison</b>! Vous trouverez tout ce qui est
+            adapté à votre taille.
+          </p>
+          <p>
+            <a href="{{path("category_vetement")}}"
+              ><i class="fas fa-arrow-circle-right"></i> CLIQUEZ ICI
+              <i class="fas fa-arrow-circle-left"></i
+            ></a>
+          </p>
+        </div>
+      </div>
+
+      <!-- BLOCK-2 -->
+      <div class="block-2">
+        <div class="image-block-2">
+          <img
+            src="/images/pexels-the-lazy-artist-gallery-2247179.jpg"
+            alt="appareils"
+          />
+        </div>
+        <div class="text-block-2">
+          <p>
+            Vous trouverez içi le matériel adapté à vos séances de sport
+            <b>à la maison</b>. Plus besoin de s'encombrer!!! Pour en savoir
+            plus...
+          </p>
+          <p>
+            <a href="{{path("category_equipement")}}"
+              ><i class="fas fa-arrow-circle-right"></i> CLIQUEZ ICI
+              <i class="fas fa-arrow-circle-left"></i
+            ></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+<script src="/js/scriptHome.js"></script>
+{% endblock %}

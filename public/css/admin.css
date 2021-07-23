@@ -1,0 +1,89 @@
+.adminPage {
+  background: ghostwhite !important;
+}
+
+.sideBarAdmin {
+  border-right: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sideBarAdmin a {
+  text-decoration: none;
+}
+.sideBarAdmin a p {
+  text-decoration: none;
+  color: blue;
+}
+
+.sideBarAdmin a p:hover {
+  color: black;
+  background: red;
+}
+
+.menuTopAdmin {
+  background: black;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuTopAdmin p {
+  font-size: 18px !important;
+}
+
+.menuTopAdmin button {
+  color: white;
+  border-radius: 6px;
+}
+
+.menuTopAdmin a {
+  color: white;
+  border-radius: 6px;
+  font-size: 18px !important;
+}
+
+.menuTopAdmin h1 {
+  color: white;
+  margin-left: 10px;
+}
+
+.divHomePageAdmin {
+  height: 100vh !important;
+  border-top: 1px solid gray;
+}
+
+.imageTable img {
+  height: 50px;
+  object-fit: contain;
+}
+
+.imageTable p {
+  margin: 0;
+  margin-left: 20px;
+}
+
+.btnTable {
+  top: 8px;
+  position: relative;
+}
+
+.parametreTd p {
+  margin-bottom: 0px !important;
+  margin-top: 15px !important;
+}
+
+@media screen and (max-width: 980px) {
+  .versionDesktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 981px) {
+  .versionPhone {
+    display: none;
+  }
+}

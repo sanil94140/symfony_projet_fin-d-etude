@@ -1,0 +1,42 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block body %}
+
+<div class="adminPage">
+
+    <div class="row">
+        <div class="menuTopAdmin">
+            <div class="col-12">
+                <h1>Administration</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row divHomePageAdmin">
+        {% include "admin/shared/_sidebar_admin.html.twig" %}
+        <div class="col-9 mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h3>Modifier un produit</h3>
+                        <a class="btn btn-primary" href="{{ path('list_product') }}">
+                            <i class="fas fa-arrow-left"></i> Retour
+                        </a>
+                    </div>
+                    <div class="card-body">
+                       {{ form_start(formProduct) }}
+
+                        {{ form_widget(formProduct) }}
+
+                        <button type="submit" class="btn btn-primary mt-3">Modifier</button>
+
+                       {{ form_end(formProduct) }}
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}
