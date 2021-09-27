@@ -27,11 +27,16 @@
                     {% for item in lignesDeCommandeArray %}
                         <tr>
                             <td>{{item.produit.titre}}</td>
-                            <td>{{item.produit.prix} | amount }</td>
+                            <td>{{item.produit.prix | amount }}</td>
                             <td>
                             {{item.quantite}}
                             </td>
-                            <td>{{{{item.produit.prix | amount }} * item.quantite}}</td>
+                            <td>
+                                {# {{item.produit.prix * item.quantite| amount }} #}
+                                {% set total = item.produit.prix * item.quantite %}
+                                {{ total| amount }}
+                            </td>
+
                         </tr>
                         
                     {% endfor %}

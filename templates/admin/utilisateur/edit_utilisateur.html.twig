@@ -1,0 +1,52 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block body %}
+
+{% if app.user.id is not same as utilisateur.id %}
+<h1>Cette page n'est pas en rapport avec votre compte. Veuillez retourner sur votre espace personnel</h1>
+<br/>
+<a href="{{ path('admin_home') }}" class="btn btn-primary">Espace client</a>
+
+{% else %}
+    
+
+
+<div class="adminPage">
+
+    <div class="row">
+        <div class="menuTopAdmin">
+            <div class="col-12">
+                <h1>Administration</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row divHomePageAdmin">
+        {% include "admin/shared/_sidebar_admin.html.twig" %}
+        <div class="col-9 mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h3>Modifier un produit</h3>
+                        <a class="btn btn-primary" href="{{ path('admin_home') }}">
+                            <i class="fas fa-arrow-left"></i> Retour
+                        </a>
+                    </div>
+                    <div class="card-body">
+                       {{ form_start(formUtilisateur) }}
+
+                        {{ form_widget(formUtilisateur) }}
+
+                        <button type="submit" class="btn btn-primary mt-3">Modifier</button>
+
+                       {{ form_end(formUtilisateur) }}
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

@@ -49,7 +49,10 @@ class ValiderPurchase extends AbstractController
         $totalArticle=0;
         $totalPrix=0;
 
-        foreach($session->get('panier') as $id=>$quantite)
+        foreach(
+            // $session->get('panier')
+            $panier
+         as $id=>$quantite)
         {
             $ligneDeCommande= new LigneDeCommande();
             $ligneDeCommande->setProduit($produitRepository->find($id));

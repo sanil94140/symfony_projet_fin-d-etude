@@ -3,11 +3,17 @@
     <div>
         <a href="{{ path('admin_home') }}">
             <p class="mt-3">
-                <i class="fas fa-store"></i> Accueil Admin
+                <i class="fas fa-store"></i>
+                {% if app.user.roles[0] is same as "ROLE_USER"  %}
+                    Accueil client
+                {% else %}
+                    Accueil Admin
+                {% endif %}
+                 
             </p>
         </a>
     </div>
-
+                {% if app.user.roles[0] is not same as "ROLE_USER"  %}
      <div>
         <a href="{{ path('list_category') }}">
             <p class="mt-3">
@@ -23,6 +29,8 @@
             </p>
         </a>
     </div>
+                {% endif %}
+
 
     <div>
         <a href="{{ path('public_home') }}" class="btn btn-primary mt-3">

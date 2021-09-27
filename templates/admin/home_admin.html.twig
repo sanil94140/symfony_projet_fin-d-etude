@@ -7,7 +7,13 @@
     <div class="row">
         <div class="menuTopAdmin">
             <div class="col-12">
-                <h1>Administration</h1>
+                <h1>
+                {% if app.user.roles[0] is same as "ROLE_USER"  %}
+                    Espace client
+                {% else %}
+                    Administration
+                {% endif %}
+                </h1>
             </div>
         </div>
     </div>
@@ -15,7 +21,82 @@
     <div class="row divHomePageAdmin">
         {% include "admin/shared/_sidebar_admin.html.twig" %}
         <div class="col-9 mt-4">
-        
+        <h3>Informations Utilisateur</h3>
+
+        <a class="btn btn-primary" href="{{ path('admin_home_edit', { 'id' : app.user.id }) }}">
+            <i class="fas fa-user-edit"></i> Je modifie mes données utilisateur
+        </a>
+        {# {{ app.user.id }}<br/> #}
+                                    <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <th>Donnée</th>
+                                        <th>Utilisateur</th>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>
+                                                <h5>Nom de famille</h3>
+
+                                                </td>
+                                                <td class="parametreTd">
+                                                    <p>{{ app.user.nom }}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                <h5>Prenom de l'utilisateur</h3>
+
+                                                </td>
+                                                <td class="parametreTd">
+                                                    <p>{{ app.user.prenom }}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                <h5>Pseudo</h3>
+
+                                                </td>
+                                                <td class="parametreTd">
+                                                    <p>{{ app.user.pseudo }}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                <h5>Adresse mail</h3>
+
+                                                </td>
+                                                <td class="parametreTd">
+                                                    <p>{{ app.user.email }}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                <h5>Adresse postale</h3>
+
+                                                </td>
+                                                <td class="parametreTd">
+                                                    <p>{{ app.user.numeroDeLaRue }} {{ app.user.nomDeLaRue }}, 
+                                                     {{ app.user.codePostal }} {{ app.user.ville }}, 
+                                                    {{ app.user.pays }}</p>
+                                                </td>
+                                            </tr>
+                                            {% if app.user.roles[0] is not same as "ROLE_USER" %}
+                                            <tr>
+                                                <td>
+                                                <h5>Rôle administrateur</h3>
+
+                                                </td>
+                                                <td class="parametreTd">
+                                                    <p>{{ app.user.roles[0]}}</p>
+                                                </td>
+                                            </tr>                                            
+                                            {% endif %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+
         </div>
     </div>
 </div>

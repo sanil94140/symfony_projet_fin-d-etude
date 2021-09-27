@@ -31,4 +31,12 @@ class FooterController extends AbstractController
     {
         return $this->render("footer/FAQ.html.twig");
     }
+
+    /**
+     * @Route("/mentions-legales", name="public_mentions_legales")
+     */
+    public function mentionsLegales(): Response
+    {
+        return $this->render("footer/mentions-legales.html.twig");
+    }
 }

@@ -60,12 +60,12 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     private $pseudo;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
      */
     private $numeroDeLaRue;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $nomDeLaRue;
 
@@ -89,9 +89,16 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $commandes;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $RGPD;
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
+        $this->roles = array('ROLE_USER');
+
     }
 
     public function getId(): ?int
@@ -317,6 +324,18 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
                 $commande->setUtilisateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRGPD(): ?bool
+    {
+        return $this->RGPD;
+    }
+
+    public function setRGPD(bool $RGPD): self
+    {
+        $this->RGPD = $RGPD;
 
         return $this;
     }

@@ -1,4 +1,5 @@
     <footer>
+
       <div class="info-site">
         <div class="footer-logo">
           <img src="" alt="logo" />
@@ -11,12 +12,14 @@
             <li><a href="{{path("public_blog")}}">Blog</a></li>
             <li><a href="{{ path('public_cgv') }}">CGV</a></li>
             <li><a href="{{ path('public_faq') }}">FAQ</a></li>
+            <li><a href="{{ path('public_mentions_legales') }}">Mentions légales</a></li>
           </ul>
         </div>
       </div>
 
       <div class="souscription-email">
         <form action="" method="post">
+        
           <label for="email"
             >Pour être parmi les premiers à être tenu informé des offres,
             souscrivez à notre VIP Newsletter.</label
@@ -28,6 +31,20 @@
             placeholder="Votre adresse email"
             required
           />
+          <br />
+          <div style="display:flex;">
+          
+            <input 
+            type="checkbox" 
+            id="RGPD"
+         required>
+          <label for="RGPD"
+            >A confirmer: <br/> J'atteste que mes données peuvent être utilisé qu'en interne de l'entreprise, pour diffuser des contenues d'informations, d'éducations et commerciales</label
+          >
+          </div>          
+          <br />
+
+
           <button>Valider</button>
           {# <p class="paragrapheEmail"></p> #}
         </form>

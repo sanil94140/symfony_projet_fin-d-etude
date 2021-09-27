@@ -30,7 +30,7 @@
           /></a>
           <div style="display:block;">
             <a href={{path('produit' , {'id': appareil.id})}}><h2>{{appareil.titre}}</h2></a>
-            <p>{{appareil.prix | amount }}€</p>
+            <p>{{appareil.prix | amount }}</p>
           </div>
           <a href={{path('produit' , {'id': appareil.id})}} class="btn btn-success">Détails</a>
             
@@ -70,7 +70,7 @@
             /></a>
             <div style="display:block;">
             <a href={{path('produit' , {'id': appareil.id})}}><h2>{{appareil.titre}}</h2></a>
-            <p>{{appareil.prix}}€</p>
+            <p>{{appareil.prix | amount }}</p>
             <a href={{path('produit' , {'id': appareil.id})}} class="btn btn-success">Détails</a>
            
             </div>
