@@ -9,6 +9,22 @@ body {
   min-height: 100vh;
 }
 
+/* typographie du site internet */
+h1,
+h2,
+h3 {
+  font-family: "Proza Libre", sans-serif;
+}
+
+p {
+  font-family: "Yaldevi", sans-serif;
+}
+
+a,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
 ul {
   list-style: none;
 }
