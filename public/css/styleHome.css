@@ -286,33 +286,6 @@ input#RGPD {
     flex-direction: column;
     align-content: center;
   }
-  .img-container-1,
-  .text-container-1 {
-    width: 100%;
-    align-content: center;
-  }
-
-  .text-block-1,
-  .text-block-2 {
-    border-radius: 15%;
-  }
-  footer {
-    font-size: 15px;
-  }
-
-  /* Pour les pages produits
-  #produit {
-    flex-direction: column;
-  } */
-
-  #produit-block {
-    width: 100%;
-  }
-}
-
-/* optimisation portable */
-
-@media screen and (max-width: 400px) {
   .image-block-1 img,
   .image-block-2 img {
     max-height: 100%;
@@ -370,3 +343,64 @@ input#RGPD {
     justify-content: center;
   }
 }
+
+/* optimisation portable
+
+@media screen and (max-width: 600px) {
+  .image-block-1 img,
+  .image-block-2 img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .block-1,
+  .block-2 {
+    flex-direction: column;
+  }
+
+  .image-block-1,
+  .image-block-2 {
+    width: 100%;
+  }
+  .image-block-1,
+  .image-block-2 {
+    max-height: 1500px;
+  }
+
+  .text-block-1,
+  .text-block-2 {
+    border-radius: 5%;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  #RGPD {
+    margin-top: 30px;
+  }
+
+  .info-site,
+  .souscription-email,
+  .réseaux {
+    width: 100%;
+    text-align: center;
+    border: burlywood 5px solid;
+  }
+
+  .info-site {
+    display: block;
+  }
+
+  .footer-legales {
+    display: inline;
+  }
+
+  .réseaux ul {
+    justify-content: center;
+  }
+} */
