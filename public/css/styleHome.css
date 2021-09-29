@@ -107,7 +107,6 @@ header {
 }
 
 .img-container-1 img {
-  max-height: 100%;
   width: 100%;
   object-fit: cover;
   opacity: 60%;
