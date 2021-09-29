@@ -101,13 +101,12 @@ header {
 }
 
 .img-container-1 {
-  width: 90%;
+  width: 60%;
   padding: 10px;
   border-radius: 10%;
 }
 
 .img-container-1 img {
-  margin: 0 auto;
   max-height: 100%;
   width: 100%;
   object-fit: cover;
@@ -287,6 +286,12 @@ input#RGPD {
     flex-direction: column;
     align-content: center;
   }
+  .img-container-1,
+  .text-container-1 {
+    width: 100%;
+    align-content: center;
+  }
+
   .image-block-1 img,
   .image-block-2 img {
     max-height: 100%;
@@ -345,9 +350,9 @@ input#RGPD {
   }
 }
 
-/* optimisation portable
+/* optimisation portable */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 400px) {
   .image-block-1 img,
   .image-block-2 img {
     max-height: 100%;
