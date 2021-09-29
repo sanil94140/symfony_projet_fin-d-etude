@@ -312,7 +312,7 @@ input#RGPD {
 
 /* optimisation portable */
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 400px) {
   .image-block-1 img,
   .image-block-2 img {
     max-height: 100%;
