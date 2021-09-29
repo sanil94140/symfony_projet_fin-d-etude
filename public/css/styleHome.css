@@ -101,12 +101,14 @@ header {
 }
 
 .img-container-1 {
-  width: 60%;
+  width: 90%;
+  margin: 0 auto;
   padding: 10px;
   border-radius: 10%;
 }
 
 .img-container-1 img {
+  max-height: 100%;
   width: 100%;
   object-fit: cover;
   opacity: 60%;
