@@ -1,19 +1,34 @@
-/* GENERAL */
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: "Raleway", sans-serif;
   width: 100%;
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
 }
+
+/* typographie du site internet*/
+h1,
+h2,
+h3 {
+  font-family: "Proza Libre", sans-serif;
+}
+
+p {
+  font-family: "Yaldevi", sans-serif;
+}
+
+a,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+/* GENERAL */
 
 ul {
   list-style: none;
-  width: 100%;
 }
 img {
   max-width: 100%;
@@ -30,7 +45,7 @@ a:hover {
   background-color: red;
 }
 
-/* HEADAER */
+/* header */
 
 header {
   width: 100%;
@@ -47,12 +62,14 @@ header {
   max-width: 15%;
 }
 
+/* navbar */
 .navbar {
   width: 85%;
 }
 .navbar ul {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .navbar ul li a {
@@ -122,7 +139,7 @@ article div {
   background: radial-gradient(rgb(219, 233, 27), #c99191);
 }
 
-/* FOOTER */
+/* footer */
 
 footer {
   background: rgb(27, 27, 27);
@@ -131,6 +148,10 @@ footer {
   justify-content: space-between;
   color: white;
   font-size: 25px;
+}
+
+input#RGPD {
+  margin-top: 10px;
 }
 
 .info-site,
@@ -142,11 +163,6 @@ footer {
 
 .info-site {
   padding-left: 15px;
-}
-
-.réseaux {
-  position: relative;
-  right: 0;
 }
 
 .réseaux ul {
@@ -162,16 +178,12 @@ footer {
     right: 25px;
   }
 }
-@media screen and (max-width: 700px) {
+
+/* optimisation ipad */
+@media screen and (max-width: 1100px) {
   .navbar {
     display: none;
   }
-
-  .navbar2 {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
   .barreNav {
     display: block;
   }
@@ -199,8 +211,51 @@ footer {
     background-color: red;
   }
 
+  .container-1 {
+    flex-direction: column;
+    align-content: center;
+  }
+  .img-container-1,
+  .text-container-1 {
+    width: 100%;
+    align-content: center;
+  }
+
+  .image-block-1 img,
+  .image-block-2 img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .block-1,
+  .block-2 {
+    flex-direction: column;
+  }
+
+  .image-block-1,
+  .image-block-2 {
+    width: 100%;
+  }
+  .image-block-1,
+  .image-block-2 {
+    max-height: 1500px;
+  }
+
+  .text-block-1,
+  .text-block-2 {
+    border-radius: 5%;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
   footer {
     flex-direction: column;
+  }
+
+  #RGPD {
+    margin-top: 30px;
   }
 
   .info-site,
@@ -209,11 +264,6 @@ footer {
     width: 100%;
     text-align: center;
     border: burlywood 5px solid;
-  }
-
-  .réseaux {
-    position: relative;
-    right: 0px;
   }
 
   .info-site {
