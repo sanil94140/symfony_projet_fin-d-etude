@@ -1,3 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+}
+
+/* typographie du site internet*/
+h1,
+h2,
+h3 {
+  font-family: "Proza Libre", sans-serif;
+}
+
+p {
+  font-family: "Yaldevi", sans-serif;
+}
+
+a,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+/* GENERAL */
+
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  margin: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  background-color: red;
+}
+
+/* header */
+
+header {
+  width: 100%;
+  padding: 10px 5px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  max-width: 15%;
+}
+
+/* navbar */
+.navbar {
+  width: 85%;
+}
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar ul li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar ul li a:hover {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  background-color: red;
+}
+
+/* barre du nav */
+.barreNav {
+  display: none;
+}
+.navbar2 {
+  display: none;
+}
+
 /* main */
 
 main {
@@ -30,9 +125,100 @@ main img {
   object-fit: cover;
 }
 
+/* footer */
+
+footer {
+  background: rgb(27, 27, 27);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 25px;
+}
+
+input#RGPD {
+  margin-top: 10px;
+}
+
+.info-site,
+.souscription-email,
+.réseaux {
+  width: 20%;
+  padding: 10px 0;
+}
+
+.info-site {
+  padding-left: 15px;
+}
+
+.réseaux ul {
+  display: flex;
+}
+.réseaux ul li {
+  margin-right: 15px;
+}
+
+/* optimisation ipad */
 @media screen and (max-width: 1100px) {
+  .navbar {
+    display: none;
+  }
+  .barreNav {
+    display: block;
+  }
+
+  .navbar2 {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .navbar2 li {
+    border: rgba(0, 0, 0, 0.9) solid 1px;
+    text-align: right;
+  }
+
+  .navbar2 ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+  }
+
+  .navbar2 ul li a:hover {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+    background-color: red;
+  }
   main {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  #RGPD {
+    margin-top: 30px;
+  }
+
+  .info-site,
+  .souscription-email,
+  .réseaux {
+    width: 100%;
+    text-align: center;
+    border: burlywood 5px solid;
+  }
+
+  .info-site {
+    display: block;
+  }
+
+  .footer-legales {
+    display: inline;
+  }
+
+  .réseaux ul {
+    justify-content: center;
   }
 }

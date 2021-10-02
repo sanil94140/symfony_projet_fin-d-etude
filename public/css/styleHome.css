@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
 }
 
-/* typographie du site internet header*/
+/* typographie du site internet*/
 h1,
 h2,
 h3 {
@@ -24,6 +24,8 @@ a,
 button {
   font-family: "Roboto", sans-serif;
 }
+
+/* GENERAL */
 
 ul {
   list-style: none;
