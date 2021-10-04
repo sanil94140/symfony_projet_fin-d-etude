@@ -34,7 +34,6 @@
                     </a>
                     </td>
                     <td>
-                    {{item.product.prix * item.quantity}}
                     {% set total = item.product.prix * item.quantity %}
                     {{ total| amount }}                    
                     
